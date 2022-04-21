@@ -10,4 +10,7 @@ class Index
     public function create(){
         echo 'index controller and create name ';
     }
+    public function store(){
+        echo 'index controller and store name ';
+    }
 }
