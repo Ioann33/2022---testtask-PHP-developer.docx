@@ -39,4 +39,26 @@ class NoteModel
         $sql = "INSERT INTO notes (text) VALUES ('$noteText');";
         return $this->db->query($sql);
     }
+
+    /**
+     * update note
+     * @param string $newNote
+     * @param int $index
+     * @return bool
+     */
+    public function update(string $newNote, int $index){
+        $sql = "UPDATE notes SET text = '$newNote' WHERE notes.id = '$index';";
+        return $this->db->query($sql);
+    }
+
+    /**
+     * delete note by id
+     * @param int $index
+     * @return bool
+     */
+    public function delete(int $index){
+        $sql = "DELETE FROM notes WHERE id = {$index};";
+        return $this->db->query($sql);
+    }
+
 }
