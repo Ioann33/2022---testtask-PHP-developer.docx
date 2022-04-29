@@ -53,4 +53,36 @@ class Route
     static public function url(string $controller = 'index', string $action = 'index'){
         return "/$controller/$action";
     }
+
+    /**
+     * redirect to URL
+     * @param string $url
+     */
+    static public function redirect(string $url){
+        header("Location: $url");
+        exit();
+    }
+
+    /**
+     * set errors to the session
+     * @param array $errors
+     */
+    static public function addErrors(array $errors){
+        session_start();
+        $_SESSION['errors'] = $errors;
+    }
+
+    /**
+     * get errors from session
+     * @return array
+     */
+    static public function getErrors(){
+        session_start();
+        $errors = [];
+        if (isset($_SESSION['errors'])){
+            $errors = $_SESSION['errors'];
+            unset($_SESSION['errors']);
+        }
+        return $errors;
+    }
 }
