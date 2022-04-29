@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
     <body>
+        <header>
+            <h1><a href="/">MVC site</a></h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="<?= Route::url()?>">Home</a></li>
+                <li><a href="<?= Route::url('note')?>">Notes</a></li>
+            </ul>
+        </nav>
         <main>
             <?php include_once 'vendor'.DIRECTORY_SEPARATOR.self::VIEWS_DIR.DIRECTORY_SEPARATOR. $pageTemplate. '.php'?>
         </main>
