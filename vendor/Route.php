@@ -43,4 +43,14 @@ class Route
         //TODO pretty view for 404 status
         exit();
     }
+
+    /**
+     * create url by controller and action
+     * @param string $controller
+     * @param string $action
+     * @return string
+     */
+    static public function url(string $controller = 'index', string $action = 'index'){
+        return "/$controller/$action";
+    }
 }
