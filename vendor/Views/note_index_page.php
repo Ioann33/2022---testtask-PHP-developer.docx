@@ -16,8 +16,7 @@
                         <td><?= $note['text']?></td>
                         <td>
                             <div class="button">
-                                <form method="post" action="<?=Route::url('note', 'update')?>">
-                                    <input type="hidden" value="<?= $note['text']?>" name="oldNote">
+                                <form method="post" action="<?=Route::url('note', 'edit')?>">
                                     <input type="hidden" value="<?= $note['id']?>" name="index">
                                     <input type="submit" value="update">
                                 </form>
