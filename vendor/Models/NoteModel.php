@@ -53,12 +53,23 @@ class NoteModel
 
     /**
      * delete note by id
-     * @param int $index
+     * @param int $id
      * @return bool
      */
-    public function delete(int $index){
-        $sql = "DELETE FROM notes WHERE id = {$index};";
+    public function delete(int $id){
+        $sql = "DELETE FROM notes WHERE id = {$id};";
         return $this->db->query($sql);
+    }
+
+    /**
+     * show one note by index
+     * @param int $id
+     * @return mixedshow
+     */
+    public function getNote(int $id){
+        $sql = "SELECT text FROM notes WHERE id = {$id};";
+        $result = $this->db->query($sql);
+        return $result->fetch_array();
     }
 
 }
