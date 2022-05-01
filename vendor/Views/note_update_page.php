@@ -1,4 +1,4 @@
-<form method="post" action="<?=Route::url('note', 'save')?>">
+<form method="post" action="<?=Route::url('note', 'update')?>">
     <label>Note:
         <input type="text" value="<?=$oldText?>" name="note">
     </label>
