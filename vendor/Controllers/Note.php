@@ -45,16 +45,16 @@ class Note extends AbstractController
         \Route::redirect(\Route::url('note'));
     }
 
-    public function update(){
-        $oldText = filter_input(INPUT_POST, 'oldNote');
-        $index = filter_input(INPUT_POST, 'index');
+    public function edit(){
+        $index = (int) filter_input(INPUT_POST, 'index');
+        $oldText = $this->model->getNote($index);
         $this->view->render('note_update_page', [
-            'oldText'=>$oldText,
+            'oldText'=>$oldText['text'],
             'index'=>$index,
         ]);
     }
 
-    public function save(){
+    public function update(){
         $newNote = filter_input(INPUT_POST, 'note');
         $index = (int) filter_input(INPUT_POST, 'index');
         $this->model->update($newNote, $index);
