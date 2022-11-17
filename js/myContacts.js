@@ -93,9 +93,6 @@ function save(){
         country_id:country.value,
         public:flag
     }
-    // console.log(phonesObj)
-    // console.log(emailObj)
-    // console.log(userObj)
     let resObj = {
         user:userObj,
         phones:phonesObj,
@@ -203,6 +200,7 @@ function showPhones(phones) {
     }
 }
 function showMyContact(obj, phonesObj, emailsObj) {
+    checked = ``
     if (obj.user[0].public === 1){
         checked = `checked`
     }

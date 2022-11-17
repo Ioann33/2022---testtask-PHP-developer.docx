@@ -4,7 +4,6 @@ function showUsers(obj){
     content.innerHTML = '<h3 class="text-center" style="color: #bb4f5f">Public PhoneBook</h3>';
     let list = '';
     for (let item of obj) {
-        console.log(item)
         list+= `
                             <div style="font-size: 1.6rem">
                                 <div style="display: inline-flex; justify-content: space-between; width: 700px; margin-top: 10px">
