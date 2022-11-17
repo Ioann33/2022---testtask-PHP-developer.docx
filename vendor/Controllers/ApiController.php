@@ -93,15 +93,15 @@ class ApiController
             http_response_code(400);
             exit();
         }
-//        $user = $input->user;
+        $user = $input->user;
 
-//        try {
-//            $update = $this->userModel->updateUser($user_id, $user->firstname, $user->lastname, $user->address, $user->city, $user->country_id, $user->public);
-//        }catch (\Exception $e){
-//            echo $e->getMessage();
-//            http_response_code(400);
-//            exit();
-//        }
+        try {
+            $this->userModel->updateUser($user_id, $user->firstname, $user->lastname, $user->address, $user->city, $user->country_id, $user->public);
+        }catch (\Exception $e){
+            echo $e->getMessage();
+            http_response_code(400);
+            exit();
+        }
         http_response_code(200);
         echo 'ok';
 
