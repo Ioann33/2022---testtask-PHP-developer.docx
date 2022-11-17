@@ -25,8 +25,8 @@ class EmailModel extends Model
      * @param $public
      * @return false|\PDOStatement
      */
-    public function create($id, $email, $user_id, $public){
-        $sql = "insert into emails (id , email, user_id, public) values ({$id}, '{$email}', {$user_id}, {$public})";
+    public function create($email, $user_id, $public){
+        $sql = "insert into emails (email, user_id, public) values ('{$email}', {$user_id}, {$public})";
         return $this->db->query($sql);
     }
 

@@ -26,8 +26,8 @@ class PhoneModel extends Model
      * @param $public
      * @return false|\PDOStatement
      */
-    public function create($id, $number, $user_id, $public){
-        $sql = "insert into phones (id , number, user_id, public) values ({$id}, '{$number}', {$user_id}, {$public})";
+    public function create($number, $user_id, $public){
+        $sql = "insert into phones (number, user_id, public) values ('{$number}', {$user_id}, {$public})";
         return $this->db->query($sql);
     }
 

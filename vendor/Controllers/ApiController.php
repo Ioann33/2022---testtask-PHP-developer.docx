@@ -68,7 +68,7 @@ class ApiController
                 if ($value->update == 1){
                     $this->phoneModel->update($value->id, $value->number, $value->public);
                 }else{
-                    $this->phoneModel->create($value->id, $value->number, $user_id, $value->public);
+                    $this->phoneModel->create($value->number, $user_id, $value->public);
                 }
             }
         }catch (\Exception $e){
@@ -85,7 +85,7 @@ class ApiController
                 if ($value->update == 1){
                     $this->emailModel->update($value->id, $value->email, $value->public);
                 }else{
-                    $this->emailModel->create($value->id, $value->email, $user_id, $value->public);
+                    $this->emailModel->create($value->email, $user_id, $value->public);
                 }
             }
         }catch (\Exception $e){
